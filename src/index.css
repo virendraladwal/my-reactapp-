@@ -6,7 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background: linear-gradient(#2A00B7, #42006C);
+  background-image:  url(./loginbackgrround\ .jpg);
+  display: flex;
+  justify-content: center; 
 }
 
 code {

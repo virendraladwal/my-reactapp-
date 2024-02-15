@@ -1,46 +1,45 @@
-import React, { useState } from 'react'
-import'./LoginSignup.css'
+import React, { useState } from 'react';
+import './LoginSignup.css';
 
-import user_icon from '../Assets/person.png'
-import email_icon from '../Assets/email.png'
-import password_icon from '../Assets/password.png'
-import { act } from 'react-dom/test-utils'
-
+import userIcon from '../Assets/person.png';
+import emailIcon from '../Assets/email.png';
+import passwordIcon from '../Assets/password.png';
 
 export const LoginSignup = () => {
+    const [action, setAction] = useState("Login");
 
-const [action,setAction] = useState("Login")
+    return (
+        <div className='container'>
+            <div className='header'>
+                <div className='text'>{action === "Login" ? "Welcome Back!" : "Join Us Today!"}</div>
+                <div className='underline'></div>
+            </div>
 
-  return (
-    <div className='container'>
-      <div className='header'>
-       <div className='text'>{action}</div>
-       <div className='underline' > </div>
-      </div> 
+            <div className='inputs'>
+                {action === "Login" ? null :
+                    <div className='input animated'>
+                        <img src={userIcon} alt='' />
+                        <input type="text" placeholder='Your Name' />
+                    </div>
+                }
+                <div className='input animated'>
+                    <img src={emailIcon} alt='' />
+                    <input type="email" placeholder='Email Address' />
+                </div>
+                <div className='input animated'>
+                    <img src={passwordIcon} alt='' />
+                    <input type="password" placeholder='Password' />
+                </div>
+            </div>
 
-      <div className='inputs'>
-        {action==="Login"?<div></div>: <div className='input'>
-          <img src= {user_icon} alt=''/>
-          <input type="text" placeholder='Name'/>
-        </div>  
-        } 
-        <div className='input'>
-          <img src= {email_icon} alt=''/>
-          <input type="email" placeholder='Email Id' />
-        </div>   
+            {action === "Sign Up" ? null :
+                <div className="forgot-password animated">Forgot your password? <span>Click here</span></div>
+            }
 
-        <div className='input'>
-          <img src= {password_icon} alt=''/>
-          <input type="password" placeholder='password'/>
-        </div>                     
-      </div>
-      
-      {action==="Sign Up"?<div></div>:<div className="forgot-password">Lost password? <span>click here</span></div>}
-      
-      <div  className='Submit-Container'>
-       <div  className={action==="Login"?"Submit gray": 'Submit'}onClick={()=>{setAction("Sign Up")}}>sign up</div>
-       <div  className={action==="Sign Up"?"Submit gray": 'Submit'}onClick={()=>{setAction("Login")}}>login</div>
-      </div>
-    </div>
-  )
-}
+            <div className='action-buttons'>
+                <div className={action === "Login" ? "action-button active" : "action-button"} onClick={() => { setAction("Login") }}>Login</div>
+                <div className={action === "Sign Up" ? "action-button active" : "action-button"} onClick={() => { setAction("Sign Up") }}>Sign Up</div>
+            </div>
+        </div>
+    );
+};
