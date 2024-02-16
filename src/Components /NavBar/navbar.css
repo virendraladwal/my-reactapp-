@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+  }
+  
+  .navbar {
+    background-color: #343a40;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    padding: 0 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .desktopMenu {
+    display: flex;
+  }
+  
+  .desktopMenuListItem {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 15px;
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .desktopMenuListItem:before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #f8f9fa;
+    transition: width 0.3s ease;
+  }
+  
+  .desktopMenuListItem:hover:before {
+    width: 100%;
+  }
+  
+  .desktopMenuListItem:hover {
+    color: #f8f9fa;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  
+  .desktopMenubtn {
+    margin-left: 5px;
+    background-color: #f0eeeb;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .desktopMenubtn:hover {
+    background-color: #e88d0c;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .dektopMenuImg {
+    height: 20px;
+    width: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar {
+      padding: 0 1rem;
+    }
+  
+    .desktopMenu {
+      display: none;
+    }
+  }
+ 
+
